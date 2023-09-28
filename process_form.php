@@ -7,10 +7,10 @@
 </head>
 
 <?php
-session_start();
-
-require_once "db_connection.php";
-
+$dbhost = 'db.cgmjlbiqninb.us-east-1.rds.amazonaws.com';
+$dbuser = "user";
+$dbpass = "password";
+$dbname = "studs";
 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 

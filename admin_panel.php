@@ -1,7 +1,16 @@
 <?php
-session_start();
+$dbhost = 'db.cgmjlbiqninb.us-east-1.rds.amazonaws.com';
+$dbuser = "user";
+$dbpass = "password";
+$dbname = "studs";
 
-require_once "db_connection.php";
+$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} else{
+    echo "Connected to database";
+}
 
 // Fetch student records from the database
 $sql = "SELECT * FROM Students";
@@ -35,14 +44,15 @@ $result = $conn->query($sql);
                     echo "<td>{$row["firstname"]}</td>";
                     echo "<td>{$row["lastname"]}</td>";
                     echo "<td>{$row["course"]}</td>";
-                    echo "<td><a href=\"delete_student.php?stud_id={$row["stud_id"]}\">Delete</a></t>
+                    echo "<td><a href=\"delete_student.php?stud_id={$row["stud_id"]}\">Delete</a></td>";
                     echo "</tr>";
                 }
             }
             ?>
         </table>
     </div>
-    <a href="admin_login.php">
+    <a href="admin_login.html">
         <button>Sign out</button>
 </body>
 </html>
+
