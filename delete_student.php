@@ -1,8 +1,10 @@
 <?php
-session_start();
+$dbhost = 'db.cgmjlbiqninb.us-east-1.rds.amazonaws.com';
+$dbuser = "user";
+$dbpass = "password";
+$dbname = "studs";
 
-require_once "db_connection.php";
-
+$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if (isset($_GET["stud_id"])) {
     $stud_id = $_GET["stud_id"];
 
