@@ -7,15 +7,14 @@
 </head>
 
 <?php
-$dbhost = 'db.cgmjlbiqninb.us-east-1.rds.amazonaws.com';
-$dbuser = 'user';
-$dbpass = 'password';
-$dbname = 'studs';
+session_start();
 
-// Create a connection to the database
+require_once "db_connection.php";
+
+
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
-// Check the connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else{
