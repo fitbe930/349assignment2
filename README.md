@@ -17,6 +17,7 @@ $dbname = "studs";
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 to your own database credentials.
+use db_setup.sql to create the structure of the database.
 
 if you want to add scheduling to the backup.sh file, you will need to install cronie(sudo yum install -y cronie).
 
