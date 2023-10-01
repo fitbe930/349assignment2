@@ -24,3 +24,13 @@ use db_setup.sql to create the structure of the database.
 
 if you want to add scheduling to the backup.sh file, you will need to install cronie(sudo yum install -y cronie).
 
+If you want to access my Web-server go to the address: 
+```
+52.5.104.145
+```
+and for my admin-server go to address:
+```
+18.232.249.162
+```
+
+
